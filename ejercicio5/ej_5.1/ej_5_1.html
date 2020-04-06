@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+  <head>
+    <title>Ejercicio PruebaFormulario</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../ejercicio2.css" />
+  </head>
+  <body>
+    <div class="textoCabecera">
+      <p class="pCabecera">Javascript,</p>
+      <p class="pCabecera">
+        <span>Ejercicios prácticos Ud-5.Ej-1</span>
+      </p>
+    </div>
+    <div class="divEjercicio3">
+      <!-- INICIO CODIGO COMUN -->
+      <div class="cajaInfoEditorial">
+        <form id="formEditorial">
+          <div class="datPersonalesEditorial">
+            <h3>Datos Personales</h3>
+            <label for="apellidos">Apellidos*</label>
+            <input
+              type="text"
+              name="comprobar"
+              id="apellidos"
+              onclick="cambiarColor(document.getElementById('apellidos'))"
+              required
+            />
+            <br />
+            <br />
+            <label for="nombre">Nombre*</label>
+            <input
+              type="text"
+              name="comprobar"
+              id="nombre"
+              onclick="cambiarColor(document.getElementById('nombre'))"
+              required
+            />
+            <br />
+            <br />
+            <label for="radioEditorial">Sexo*</label>
+
+            <input
+              type="radio"
+              name="radioEditorial"
+              id="hombre"
+              value="hombre"
+              checked
+              required
+            />hombre
+            <br />
+            <br />
+            <input
+              type="radio"
+              name="radioEditorial"
+              id="mujer"
+              value="mujer"
+            />mujer
+            <br />
+            <br />
+            <label for="email">Correo Electrónico*</label>
+            <input
+              type="email"
+              name="comprobar"
+              id="email"
+              onclick="cambiarColor(document.getElementById('email'))"
+              required
+            />
+            <p id="validacionEmail"></p>
+          </div>
+
+          <div class="informacionEditorial">
+            <h3>Información</h3>
+            <label for="selectEditorial">¿Como nos encontró?</label>
+            <select id="selectEditorial" name="selectEditorial" required>
+              <option value="azar">Al azar</option>
+              <option value="url">Me indicaron la URL de la página</option>
+              <option value="buscador" selected
+                >A través de otro buscador</option
+              >
+              <option value="enlace"
+                >Mediante un enlace desde otra página</option
+              >
+              <option value="otro">Otros</option>
+            </select>
+            <br />
+            <br />
+            <label for="checkboxEditorial">¿Que temas le interesan?</label>
+            <br />
+            <br />
+            <input
+              type="checkbox"
+              name="checkboxEditorial"
+              id="opcion1"
+              value="Historia"
+            />
+            Historia
+            <br />
+            <br />
+            <input
+              type="checkbox"
+              name="checkboxEditorial"
+              id="opcion2"
+              value="Tendencias P.O.O."
+            />
+            Tendencias P.O.O.
+            <br />
+            <br />
+            <input
+              type="checkbox"
+              name="checkboxEditorial"
+              id="opcion3"
+              value="Multiplataformas"
+            />
+            Multiplataformas
+          </div>
+        </form>
+      </div>
+      <div class="cajaButtonsEditorial">
+        <div class="cajaTextoEditorial">
+          <h2 class="h2Editorial">EDITORIAL CICLOS F.P.</h2>
+          <select
+            name="selectMostrarEditorial"
+            id="selectMostrarEditorial"
+            readonly
+            oncopy="return false"
+            size="13"
+            multiple
+          >
+          </select>
+        </div>
+        <div class="buttonsEditorial">
+          <button id="anadirDatos" onclick="btnAñadirDatosFormulario()">
+            Añadir
+          </button>
+          <button id="visualizarDatos" onclick="btnVisualizarDatosFormulario()">
+            Visualizar Datos
+          </button>
+
+          <button id="eliminarDatos" onclick="btnEliminarDatosFormulario()">
+            Eliminar
+          </button>
+        </div>
+      </div>
+      <div id="modalEditorial"></div>
+      <!-- FIN CODIGO COMUN -->
+    </div>
+    <br />
+    <div class="buttonEj">
+      <button class="classSubmit"><a href="../../index.html">VOLVER</a></button>
+    </div>
+    <div class="divFooter">
+      <p class="pfooter">Juan Airam Armas Alemán - 2ºDAW</p>
+    </div>
+    <script src="ej_5_1.js" type="text/javascript"></script>
+  </body>
+</html>

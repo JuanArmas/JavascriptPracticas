@@ -1,0 +1,159 @@
+FOR OF:
+Use for ... of para iterar sobre los valores en un iterable , como una matriz, por ejemplo:
+/**/
+let animals = ['🐔', '🐷', '🐑', '🐇']; let names = ['Gertrude', 'Henry', 'Melvin', 'Billy Bob']; for (let animal of animals) { // Random name for our animal let nameIdx = Math.floor(Math.random() * names.length); console.log(`${names[nameIdx]} the ${animal}`); } // Henry the 🐔 // Melvin the 🐷 // Henry the 🐑 // Billy Bob the 🐇
+/*FIN EJEMPLO*/
+
+Los string también son de tipo iterable, por lo que puede usar for ... of string:
+/**/
+let str = 'abcde'; for (let char of str) { console.log(char.toUpperCase().repeat(3)); } // AAA // BBB // ...
+/*FIN EJEMPLO*/
+
+También puede iterar sobre mapas , conjuntos , generadores , colecciones de nodos DOM y los objetos de argumentos disponibles dentro de las funciones.
+
+FOR IN:
+
+Use for ... in para iterar sobre las propiedades de un objeto (las teclas de objeto):
+/**/
+let oldCar = { make: 'Toyota', model: 'Tercel', year: '1996' }; for (let key in oldCar) { console.log(`${key} --> ${oldCar[key]}`); } // make --> Toyota // model --> Tercel
+/*FIN EJEMPLO*/
+
+También puede usar for ... in para iterar sobre los valores de índice de un iterable como una matriz o una cadena:
+/**/
+let str = 'Turn the page'; for (let index in str) { console.log(`Index of ${str[index]}: ${index}`); } // Index of T: 0 // Index of u: 1
+/**/
+
+/*****************OTRA EXPLICACION FOR IN/ OF************************/
+La declaración for..in
+for..in es un método para iterar sobre propiedades "enumerables" de un objeto. Por lo tanto, se aplica a todos los objetos (no solo Object() s) que tienen estas propiedades.
+
+Una propiedad enumerable se define como una propiedad de un objeto que tiene un valor Enumerable de verdadero. Esencialmente, una propiedad es "enumerable", si es enumerable . Podemos verificar si una propiedad es enumerable llamando a property.enumerable , que devolverá verdadero o falso.
+
+Usamos el bucle for..in con la siguiente sintaxis:
+
+ for (variable in enumerable) { // do stuff } 
+Por ejemplo, para recorrer y console.log todos los valores en este objeto, podemos hacer lo siguiente:
+
+ const obj = { a: 1, b: 2, c: 3, d: 4 } for (const key in obj) { console.log( obj[key] ) } // Result: 1, 2, 3, 4 
+El bucle for ... in también iterará sobre las propiedades heredadas, siempre que sean propiedades enumerables. La iteración for ... in ocurre en un orden arbitrario. Por lo tanto, no debe usarse si las cosas necesitan suceder en su secuencia definida.
+
+for..in y Objetos
+El método for..in nos proporciona la forma más directa de recorrer las claves y los valores de Object, ya que los Objetos no tienen acceso al método forEach que tienen los Arrays.
+
+for..in y matrices
+La "clave" para los valores en una matriz son los índices numéricos. Por lo tanto, estos índices son esencialmente propiedades enumerables, como las claves de objeto, excepto que son enteros en lugar de cadenas.
+
+Esto significa que podemos recorrer todos los valores de una matriz recuperando su índice utilizando la matriz for..in .
+
+ const array = ['a', 'b', 'c', 'd']; for (const index in array) { console.log(array[index]) } // Result: a, b, c, d 
+Sin embargo, generalmente se recomienda que no se use para ... con matrices, particularmente porque no se puede garantizar que la iteración ocurra en secuencia, lo que generalmente es importante para las matrices.
+
+for..in y cuerdas
+Cada carácter en una cadena tiene un índice. Por lo tanto, similar a las matrices, los índices son propiedades enumerables que resultan ser enteros.
+
+ const string = 'Ire Aderinokun'; for (const index in string) { console.log(string[index]) } // Result: I, r, e, , A, d, e, r, i, n, o, k, u, n 
+La declaración de ...
+for..of es un método, introducido en ES2015, para iterar sobre "colecciones iterables". Estos son objetos que tienen una propiedad [Symbol.iterator] .
+
+La propiedad [Symbol.iterator] nos permite iterar manualmente sobre la colección llamando al [Symbol.iterator]().next() para recuperar el siguiente elemento de la colección.
+
+ const array = ['a','b','c', 'd']; const iterator = array[Symbol.iterator](); console.log( iterator.next().value ) console.log( iterator.next().value ) console.log( iterator.next().value ) console.log( iterator.next().value ) // Result: a, b, c, d 
+La sintaxis for..of es esencialmente una envoltura alrededor del [Symbol.iterator] para crear bucles. Utiliza la siguiente sintaxis:
+
+ for (variable of iterable) { // do stuff } 
+for..of y objetos
+El bucle for..of no funciona con objetos porque no son "iterables" y, por lo tanto, no tienen una propiedad [Symbol.iterator] .
+
+for..of y matrices / cadenas
+El bucle for..of funciona bien con matrices y cadenas, ya que son iterables. Este método es una forma más confiable de recorrer una matriz en secuencia.
+
+ const array = ['a', 'b', 'c', 'd']; for (const item of array) { console.log(item) } // Result: a, b, c, d const string = 'Ire Aderinokun'; for (const character of string) { console.log(character) } // Result: I, r, e, , A, d, e, r, i, n, o, k, u, n 
+for..of y NodeLists
+Finalmente, otro caso realmente útil para for..of es la iteración de NodeLists. Cuando consultamos el documento para un grupo de elementos, lo que nos devuelve es una NodeList, no una matriz. Esto significa que no podemos iterar sobre la lista utilizando métodos de matriz como forEach .
+
+Para resolver esto, podemos convertirlo en una matriz usando Array.from() , o usar el bucle for..of , que es aplicable a algo más que matrices.
+
+ const elements = document.querySelectorAll('.foo'); for (const element of elements) { element.addEventListener('click', doSomething); } 
+
+Una comparación:
+				for..in				for..of
+Se aplica a		Enumerables propiedades		Colecciones Iterables
+Usar con objetos?		si				No
+Usar con matrices?	Si pero no aconsejado			si
+Usar con cuerdas?	Si pero no aconsejado			si
+/*****************************************/
+/***********************************************MEJOR EXPLICACION HASTA LA FECHA*************************************************************/
+Hay muchas formas de recorrer las matrices y los objetos en JavaScript, y las compensaciones son una causa común de confusión . Algunas guías de estilo llegan a prohibir ciertas construcciones de bucle . En este artículo, describiré las diferencias entre iterar sobre una matriz con las 4 construcciones principales de bucle:
+
+for (let i = 0; i < arr.length; ++i)
+arr.forEach((v, i) => { /* ... */ })
+for (let i in arr)
+for (const v of arr)
+Proporcionaré una descripción general de la diferencia entre estas construcciones de bucle utilizando varios casos de borde diferentes. También vincularé las reglas relevantes de ESLint que puede usar para aplicar las mejores prácticas de bucle en sus proyectos.
+
+Resumen sintáctico
+Las construcciones de bucle for y for/in dan acceso al índice en la matriz, no al elemento real. Por ejemplo, suponga que desea imprimir los valores almacenados en la siguiente matriz:
+
+ const arr = [ 'a' , 'b' , 'c' ]; 
+Con for y for/in , debe imprimir arr[i] :
+
+ for ( let i = 0 ; i < arr.length; ++i) { console .log(arr[i]); } for ( let i in arr) { console .log(arr[i]); } 
+Con las otras dos construcciones, forEach() y for/of , obtiene acceso al elemento de matriz en sí. Con forEach() puede acceder al índice de matriz i , con for/of you no.
+
+ arr.forEach((v, i) => console .log(v)); for ( const v of arr) { console .log(v); } 
+Propiedades no numéricas
+Las matrices de JavaScript son objetos. Eso significa que puede agregar propiedades de cadena a su matriz, no solo números.
+
+ const arr = [ 'a' , 'b' , 'c' ]; typeof arr; // 'object' // Assign to a non-numeric property arr.test = 'bad' ; arr.test; // 'abc' arr[ 1 ] === arr[ '1' ]; // true, JavaScript arrays are just special objects 
+3 de las 4 construcciones de bucle ignoran la propiedad no numérica. Sin embargo, for/in realmente imprimirá "malo":
+
+ const arr = [ 'a' , 'b' , 'c' ]; arr.test = 'bad' ; // Prints "a, b, c, bad" for ( let i in arr) { console .log(arr[i]); } 
+Es por eso que iterar a través de una matriz usando for/in es generalmente una mala práctica . Las otras construcciones de bucle ignoran correctamente la clave numérico:
+
+ const arr = [ 'a' , 'b' , 'c' ]; arr.test = 'abc' ; // Prints "a, b, c" for ( let i = 0 ; i < arr.length; ++i) { console .log(arr[i]); } // Prints "a, b, c" arr.forEach((el, i) => console .log(i, el)); // Prints "a, b, c" for ( const el of arr) { console .log(el); } 
+Para llevar: Evite usar for/in sobre una matriz a menos que esté seguro de que quiere iterar sobre claves no numéricas y claves heredadas. Use la regla de ESLint de guard-for-in entrada para no permitir for/in .
+
+Elementos vacíos
+Las matrices de JavaScript permiten elementos vacíos . La siguiente matriz es sintácticamente válida y tiene una longitud 3:
+
+ const arr = [ 'a' ,, 'c' ]; arr.length; // 3 
+Lo que hace las cosas aún más confusas es que las construcciones en bucle tratan ['a',, 'c'] diferente a ['a', undefined, 'c'] . A continuación se muestra cómo las 4 construcciones de bucle manejan ['a',, 'c'] con un elemento vacío. for/in y for/each omiten el elemento vacío, for y for/of no.
+
+ // Prints "a, undefined, c" for ( let i = 0 ; i < arr.length; ++i) { console .log(arr[i]); } // Prints "a, c" arr.forEach(v => console .log(v)); // Prints "a, c" for ( let i in arr) { console .log(arr[i]); } // Prints "a, undefined, c" for ( const v of arr) { console .log(v); } 
+En caso de que se pregunte, las 4 construcciones imprimen "a, undefined, c" ​​para ['a', undefined, 'c'] .
+
+Hay otra forma de agregar un elemento vacío a una matriz:
+
+ // Equivalent to `['a', 'b', 'c',, 'e']` const arr = [ 'a' , 'b' , 'c' ]; arr[ 5 ] = 'e' ; 
+forEach() y for/in forEach() elementos vacíos en la matriz, for y for/of no lo hacen. El comportamiento de forEach() puede causar problemas, sin embargo, los agujeros en las matrices de JavaScript son generalmente raros porque no son compatibles con JSON:
+
+ $ node > JSON .parse( '{"arr":["a","b","c"]}' ) { arr: [ 'a' , 'b' , 'c' ] } > JSON .parse( '{"arr":["a",null,"c"]}' ) { arr: [ 'a' , null , 'c' ] } > JSON .parse( '{"arr":["a",,"c"]}' ) SyntaxError : Unexpected token , in JSON at position 12 
+Por lo tanto, no tiene que preocuparse por los agujeros en los datos de los usuarios, a menos que les dé acceso a los usuarios al tiempo de ejecución completo de JavaScript.
+
+Para llevar: for/in y forEach() elementos vacíos, también conocidos como "agujeros" , en la matriz. Rara vez hay alguna razón para tratar los agujeros como un caso especial en lugar de tratar el índice como un valor undefined . Si el comportamiento especial con agujeros le preocupa, a continuación se muestra un ejemplo de archivo .eslintrc.yml que no permite llamar a forEach() .
+
+ parserOptions: ecmaVersion: 2018 rules: no-restricted-syntax: - error - selector: CallExpression[callee.property.name= "forEach" ] message: Do not use `forEach()` , use `for/of` instead 
+Contexto de funciones
+El contexto de función es una forma elegante de decir a qué se refiere this . for , for/in y for/of retienen el valor del alcance externo de this , pero la devolución de llamada forEach() tendrá un valor diferente a menos que utilice una función de flecha .
+
+ 'use strict' ; const arr = [ 'a' ]; // Prints "undefined" arr.forEach( function (  ) { console .log( this ); }); 
+Para llevar: Use las funciones de flecha con forEach() . Use la regla de ESLint no-arrow-callback para requerir funciones de flecha para todas las devoluciones de llamada que no usan this .
+
+Asíncrono / Espera y Generadores
+Otro caso extremo con forEach() es que no funciona bien con async / await o generadores . Si su devolución de llamada forEach() es síncrona, entonces no importa, pero no puede usar forEach() dentro de una devolución de llamada forEach() :
+
+ async function run (  ) { const arr = [ 'a' , 'b' , 'c' ]; arr.forEach(el => { // SyntaxError await new Promise (resolve => setTimeout(resolve, 1000 )); console .log(el); }); } 
+Tampoco puedes usar el yield :
+
+ function * run (  ) { const arr = [ 'a' , 'b' , 'c' ]; arr.forEach(el => { // SyntaxError yield new Promise (resolve => setTimeout(resolve, 1000 )); console .log(el); }); } 
+Los ejemplos anteriores funcionan bien con for/of :
+
+ async function asyncFn (  ) { const arr = [ 'a' , 'b' , 'c' ]; for ( const el of arr) { await new Promise (resolve => setTimeout(resolve, 1000 )); console .log(el); } } function * generatorFn (  ) { const arr = [ 'a' , 'b' , 'c' ]; for ( const el of arr) { yield new Promise (resolve => setTimeout(resolve, 1000 )); console .log(el); } } 
+Incluso si marca su devolución de llamada forEach() como async , forEach() un dolor de cabeza considerable al intentar que async forEach() funcione en serie y pause su función asincrónica. Por ejemplo, el siguiente script imprimirá 0-9 en orden inverso .
+
+ async function print ( n ) { // Wait 1 second before printing 0, 0.9 seconds before printing 1, etc. await new Promise (resolve => setTimeout(() => resolve(), 1000 - n * 100 )); // Will usually print 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 but order is not strictly // guaranteed. console .log(n); } async function test (  ) { [ 0 , 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 ].forEach(print); } test(); 
+Para llevar: si está utilizando async / await o generadores , recuerde que forEach() es azúcar sintáctico. Al igual que el azúcar, debe usarse con moderación y no debe usarse para todo.
+
+Conclusiones
+En general, for/of es la forma más sólida de iterar sobre una matriz en JavaScript. Es más conciso que un bucle for convencional y no tiene tantos casos forEach() como for/in y forEach() . Las principales desventajas de for/of es que necesita hacer un trabajo adicional para acceder al índice (1), y no puede encadenar como puede con forEach() . forEach() viene con varias advertencias y debe usarse con moderación, pero hay numerosos casos en los que hace que el código sea más conciso.
+

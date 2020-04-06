@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+  <head>
+    <title>Ejercicio 7.2 Emulando marcos</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../ejercicio2.css" />
+  </head>
+  <body>
+    <div class="textoCabecera">
+      <p class="pCabecera">Javascript,</p>
+      <p class="pCabecera">
+        <span>Ejercicios prácticos Ud-7.Ej-2</span>
+      </p>
+    </div>
+    <div class="divEjercicio2">
+      <!-- INICIO FONDO COMUN -->
+<div class="divPrimerContenedor">
+        <p>
+          Escribe un texto, elige el contenedor y pulsa el botón para que se
+          escriba el texto en el contenedor seleccionado
+        </p>
+        <label for="textoMarco">Texto</label>
+        <input type="text" id="textoMarco" name="textoMarco" />
+        <div class="divRadioContenedor">
+          <label for="radioContenedorMarco">Contenedor</label>
+          <div>
+            <input
+              type="radio"
+              name="radioContenedorMarco"
+              id="radioMarcoIzquierdo"
+              value="izquierdo"
+            />
+            Izquierdo
+            <input
+              type="radio"
+              name="radioContenedorMarco"
+              id="radioMarcoDerecho"
+              value="derecho"
+            />
+            Derecho
+          </div>
+        </div>
+        <div class="divEscribir">
+          <label for="escribirMarco">Escribir</label>
+          <button name="escribirMarco" id="escribirMarco">ESCRIBIR</button>
+        </div>
+        <button onclick="window.location.reload()">REINICIAR</button>
+      </div>
+      <div id="contenedorIzquierdo">
+        <h3 id="contH3Iz">Contenedor izquierdo</h3>
+        <p id="pContIzquierdo"></p>
+      </div>
+      <div id="contenedorDerecho">
+        <h3 id="contH3Der">Contenedor derecho</h3>
+        <p id="pContDerecho"></p>
+        <button id="preguntaContenedores">
+          ¿Cómo se llaman los contenedores?
+        </button>
+      </div>
+      <!-- FIN FONDO COMUN -->
+    </div>
+    <br />
+    <div class="buttonEj">
+      <button class="classSubmit"><a href="../../index.html">VOLVER</a></button>
+    </div>
+    <div class="divFooter">
+      <p class="pfooter">Juan Airam Armas Alemán - 2ºDAW</p>
+    </div>
+    <script src="ej_7_2.js" type="text/javascript"></script>
+  </body>
+</html>

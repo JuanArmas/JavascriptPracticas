@@ -1,0 +1,835 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300");
+
+html {
+  font-size: 100%;
+  overflow-y: scroll;
+}
+body {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.231;
+  background-color: #414141;
+  color: white;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+section {
+  text-align: center;
+}
+/*************************CABECERA**********************************/
+.textoCabecera {
+  text-align: center;
+  color: orangered;
+  margin-top: 2%;
+  font-family: "Roboto";
+  font-weight: 300;
+  font-size: 32px;
+  height: 10rem;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+.pCabecera {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.pCabecera:first-of-type {
+  animation: showup 7s infinite;
+}
+
+.pCabecera:last-of-type {
+  width: 0px;
+  animation: reveal 7s infinite;
+}
+
+.pCabecera:last-of-type span {
+  margin-left: -355px;
+  animation: slidein 7s infinite;
+}
+
+@keyframes showup {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slidein {
+  0% {
+    margin-left: -800px;
+  }
+  20% {
+    margin-left: -800px;
+  }
+  35% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: 0px;
+  }
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    width: 0px;
+  }
+  20% {
+    opacity: 1;
+    width: 0px;
+  }
+  30% {
+    width: 30%;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    width: 30%;
+  }
+}
+
+/*************************ACORDEON**********************************/
+
+/* caja acordeon */
+.acordeon {
+  /* width:50%; */
+  width: 60%;
+  margin: 0 auto;
+  overflow: hidden;
+  color: #474747;
+  background: #414141;
+  padding: 10px;
+}
+
+/********
+
+Generales
+
+*********/
+/* ABIERTO */
+.acordeon section.secAcord:target {
+  background: darkgray;
+  padding: 10px;
+  height: 50%; /*add*/
+}
+.acordeon section.secAcord:target:hover {
+  background: darkgray;
+}
+.acordeon section.secAcord:target h2.h2Acordeon {
+  width: 100%;
+}
+.acordeon section.secAcord:target h2.h2Acordeon a.aAcordeon {
+  color: #333;
+  padding: 0;
+}
+
+.acordeon section.secAcord:target p.pAcordeon {
+  /**/
+  display: block;
+}
+.acordeon section.secAcord:target p.pAcordeon img {
+  width: 100%;
+}
+
+.acordeon section.secAcord:target:before {
+  display: none;
+}
+.acordeon section.secAcord h2.h2Acordeon a.aAcordeon {
+  padding: 8px 10px;
+  display: block;
+  font-size: 16px;
+  font-weight: normal;
+  color: #eee;
+  text-decoration: none;
+}
+
+/* CERRADO */
+.acordeon section.secAcord {
+  float: left;
+  overflow: hidden;
+  color: #333;
+  cursor: pointer;
+  background: #333;
+  margin: 3px;
+}
+.acordeon section.secAcord:hover {
+  background: #444;
+}
+
+.acordeon section.secAcord p.pAcordeon {
+  display: none;
+}
+
+.acordeon section.secAcord:before {
+  position: relative;
+  font-size: 24px;
+  color: #fff;
+  font-weight: bold;
+}
+.acordeon section.secAcord:nth-child(1):before {
+  content: "2";
+}
+.acordeon section.secAcord:nth-child(2):before {
+  content: "3";
+}
+.acordeon section.secAcord:nth-child(3):before {
+  content: "4";
+}
+.acordeon section.secAcord:nth-child(4):before {
+  content: "5";
+}
+.acordeon section.secAcord:nth-child(5):before {
+  content: "6";
+}
+.acordeon section.secAcord:nth-child(6):before {
+  content: "7";
+}
+.acordeon section.secAcord:nth-child(7):before {
+  content: "8";
+}
+.acordeon section.secAcord:nth-child(8):before {
+  content: "9";
+}
+.acordeon section.secAcord:nth-child(9):before {
+  content: "10";
+}
+.acordeon section.secAcord:nth-child(10):before {
+  content: "11";
+}
+/*********************************************************************/
+
+/** HORIZONTAL **/
+
+.horizontal section.secAcord {
+  /* width: 14%;  */
+  width: 8%;
+  height: 53%;
+  -moz-transition: width 0.2s ease-out;
+  -webkit-transition: width 0.2s ease-out;
+  -o-transition: width 0.2s ease-out;
+  -ms-transition: width 0.2s ease-out;
+  transition: width 0.9s ease-out;
+}
+
+/*Posiciona el numero de la viñeta*/
+.horizontal section.secAcord:before {
+  top: 3px;
+  left: 18px;
+}
+
+/*h2 girado*/
+.horizontal section.secAcord h2.h2Acordeon {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  width: 240px;
+  position: relative;
+  left: -100px;
+  top: 65px;
+}
+
+/*  */
+
+/*abrir al hacer hover*/
+div.horizontal :target {
+  /* width: 28%; */
+  width: 18%;
+  height: 50%;
+}
+div.horizontal :target h2.h2Acordeon {
+  top: 0px;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+/*****************************FIN ACORDEON****************************************/
+/*************************CODIGO .JS**********************************/
+/*****GENERAL JS*****/
+.btnEj1 {
+  margin: 0 auto;
+  width: 45%;
+}
+.margenL {
+  margin-left: 5%;
+}
+.piramide {
+  width: 60% !important;
+}
+.classSubmit {
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 6px;
+  margin-left: 2%;
+  margin-top: 1%;
+}
+.classSubmit:hover {
+  background-color: orangered;
+  color: #414141;
+  transform: scale(1.2);
+}
+/**************EJERCICIO 2*************************/
+.divEjercicio2 {
+  border: black 1px solid;
+  width: 35%;
+  text-align: center;
+  background-color: darkslategray;
+  margin: 0 auto;
+  padding-bottom: 2%;
+}
+.buttonEj {
+  margin: 0 auto;
+  width: 6%;
+  margin-top: 4%;
+}
+/*************APARTADO 2.1*************************/
+#name {
+  margin-left: 5%;
+  width: 60%;
+}
+#respuesta {
+  margin-left: 34%;
+  width: 60%;
+}
+#saludar {
+  margin-left: 30%;
+  margin-bottom: 2%;
+}
+.label1 {
+  margin-left: 5%;
+}
+
+/*************APARTADO 2.2*************************/
+/*
+#
+*/
+/*************APARTADO 2.3*************************/
+#generarPrimitiva {
+  margin-left: 1%;
+  width: 60%;
+}
+#numPrimitiva {
+  margin-left: 1%;
+  width: 45%;
+  margin-left: 29%;
+  text-align: center;
+}
+
+/*************APARTADO 2.4*************************/
+#controlErrores {
+  margin-bottom: 2%;
+}
+/*************APARTADO 2.5*************************/
+#capturaErr {
+  margin-left: 1%;
+  width: 45%;
+  text-align: center;
+  margin-left: 29%;
+}
+/**************FIN EJERCICIO 2*************************/
+
+/****************************************************************************/
+/****************************************************************************/
+
+/****************EJERCICIO 3***************************/
+
+/******************INICIO EJERCICIO 3_1****************************/
+#numIntroducido {
+  margin-left: 3%;
+}
+#incrementar {
+  margin-top: 2%;
+}
+/*********************FIN EJERCICIO 3_1***************************/
+/******************INICIO EJERCICIO 3_2***************************/
+/**********************MONEDA*************************************/
+#carruselTMoneda {
+  max-width: 27%;
+  margin: 0 auto;
+}
+#imagenTMoneda {
+  width: 83%;
+  height: 377px;
+  background-size: cover;
+  margin: 0 auto;
+}
+
+#optionTMoneda {
+  margin-top: 5%;
+}
+#radioTMoneda {
+  margin: 0 auto;
+  margin-bottom: 3%;
+}
+#controlesTMoneda {
+  margin: 0 auto;
+  margin-top: 10.9%;
+}
+#txtPTMoneda1,
+#txtPTMoneda2 {
+  text-align: center;
+}
+/********************FIN MONEDA*************************************/
+/**********************PPT*************************************/
+.carruselPPT {
+  max-width: 27%;
+  margin: 0 auto;
+}
+#imagenPPT {
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+}
+
+#optionPPT {
+  display: flex;
+  margin-top: 5%;
+}
+#radioPPT {
+  margin: 0 auto;
+}
+.controlesPPT {
+  margin: 0 auto;
+  margin-top: 10.9%;
+  margin-left: 0%;
+}
+#jugarTMoneda {
+  margin-right: 3%;
+  margin-left: 5%;
+}
+#spanRadioMoneda {
+  margin-right: 3%;
+}
+#txtPPT1,
+#txtPPT2 {
+  text-align: center;
+}
+/********************FIN PPT*************************************/
+/********************MENUFUNCIONES******************************/
+li {
+  list-style-type: none;
+  position: relative;
+  width: 120px;
+}
+
+li a {
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  padding: 7% 8%;
+  width: 100%;
+  height: 7%;
+  border: 1px solid #251818;
+  color: #fff;
+  background-color: #415d53;
+  margin-left: 106%;
+}
+
+li a:hover {
+  color: #000;
+  background-color: #fff;
+}
+
+nav li ul {
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 120px;
+}
+
+nav li:hover ul {
+  display: block;
+}
+/******************FIN EJERCICIO 3_2***************************/
+/**************FIN EJERCICIO 3*************************/
+
+/****************************************************************************/
+/****************************************************************************/
+
+/**************INICIO EJERCICIOS 4*************************/
+/******************INICIO EJERCICIO 4_1 AHORCADO***************************/
+#idImgAhorcado {
+  width: 70%;
+  height: 377px;
+  background-size: cover;
+  margin: 0 auto;
+  margin-top: 3%;
+}
+
+#introPalabra {
+  margin-left: 9%;
+}
+.btnAhorcado {
+  margin-left: 0%;
+}
+.divInputAhorcado {
+  text-align: center;
+  margin-top: 2%;
+}
+
+/******************FIN EJERCICIO 4_1***************************/
+/******************INICIO EJERCICIO 4_2***************************/
+#introFecha {
+  background: border-box;
+  background-color: #ece6e6;
+}
+#salFecha {
+  width: 39.7%;
+  float: left;
+  /* margin-left: 1%; */
+  margin-top: auto;
+  text-align: center;
+}
+#pPrecio {
+  width: 86.7%;
+  margin-top: auto;
+  text-align: center;
+}
+.labelPark {
+  float: left;
+  margin-left: 13%;
+}
+.liPark {
+  width: 91%;
+}
+/******************FIN EJERCICIO 4_2***************************/
+/******************INICIO EJERCICIO 4_3***************************/
+#datosVector {
+  margin-top: 5%;
+}
+#pVerMsg1 {
+  margin-left: 22%;
+}
+#pVerMsg3 {
+  margin-left: 24%;
+}
+#pSortVector {
+  margin-left: 23%;
+}
+#pVerMsg4 {
+  margin-left: 5%;
+}
+.divVectores {
+  text-align: initial;
+  margin-top: 4%;
+  margin-left: 2%;
+  margin-bottom: 3%;
+}
+
+/******************FIN EJERCICIO 4_3***************************/
+/******************INICIO EJERCICIO 4_4***************************/
+#mailAVerificar {
+  margin-top: 7%;
+}
+
+/******************FIN EJERCICIO 4_4***************************/
+/**************FIN EJERCICIO 4*************************/
+
+/****************************************************************************/
+/****************************************************************************/
+
+/**************INICIO EJERCICIO 5*************************/
+/**************FIN EJERCICIO 5.1 prueba formulario********/
+#selectMostrarEditorial {
+  border: 3px inset;
+  width: 80%;
+  margin-left: 20%;
+}
+.h2Editorial {
+  border: 3px inset;
+  width: 47%;
+  margin-left: 35%;
+}
+.cajaInfoEditorial {
+  float: left;
+  width: 45%;
+}
+.cajaButtonsEditorial {
+  float: left;
+  width: 45%;
+}
+.buttonsEditorial {
+  margin-left: 28%;
+}
+
+#anadirDatos {
+  cursor: pointer;
+  margin-top: 11%;
+  margin-left: 11%;
+  margin-right: 49%;
+  width: 65.7%;
+  border-radius: 9%;
+  border: 1px outset;
+  box-shadow: 2px 3px #888888;
+}
+#visualizarDatos {
+  cursor: pointer;
+  margin-top: 9%;
+  margin-left: 11%;
+  margin-right: 49%;
+  width: 65.7%;
+  border-radius: 9%;
+  border: 1px outset;
+  box-shadow: 2px 3px #888888;
+}
+#eliminarDatos {
+  cursor: pointer;
+  margin-top: 9%;
+  margin-left: 11%;
+  margin-right: 49%;
+  width: 65.7%;
+  border-radius: 9%;
+  border: 1px outset;
+  box-shadow: 2px 3px #888888;
+}
+#anadirDatos:hover {
+  background-color: orangered;
+  color: #414141;
+  transform: scale(1.2);
+}
+#visualizarDatos:hover {
+  background-color: orangered;
+  color: #414141;
+  transform: scale(1.2);
+}
+#eliminarDatos:hover {
+  background-color: orangered;
+  color: #414141;
+  transform: scale(1.2);
+}
+
+#formEditorial {
+  margin-left: 32%;
+}
+.datPersonalesEditorial {
+  margin-top: 8%;
+}
+
+.datPersonalesEditorial h3 {
+  border: 3px inset;
+  text-align: center;
+}
+.datPersonalesEditorial #apellidos {
+  margin-left: 18.7%;
+}
+.datPersonalesEditorial #nombre {
+  margin-left: 21%;
+}
+.datPersonalesEditorial #hombre {
+  margin-left: 26.1%;
+}
+.datPersonalesEditorial #mujer {
+  margin-left: 35.4%;
+}
+.datPersonalesEditorial #email {
+  margin-left: 4.1%;
+}
+.informacionEditorial h3 {
+  border: 3px inset;
+  text-align: center;
+}
+.informacionEditorial #selectEditorial {
+  margin-left: 2%;
+}
+.informacionEditorial #opcion1,
+#opcion2,
+#opcion3 {
+  margin-left: 37.1%;
+}
+
+/**************************INICIO MODAL******************/
+#modalEditorial {
+  position: fixed;
+  width: 32%;
+  height: 39%;
+  top: 0;
+  left: 0;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  border-radius: 9%;
+  border: 3px outset;
+  box-shadow: 3px 5px #888888;
+  background-color: #fafafa;
+  color: #000000;
+  display: none;
+}
+#pModalEditorial {
+  margin-left: 10%;
+  margin-top: 7%;
+}
+#cerrarModal {
+  margin-top: 6%;
+  margin-left: 75%;
+  border-radius: 9%;
+}
+#idUl li {
+  width: 97%;
+  margin-top: 2%;
+}
+/**************************FIN MODAL******************/
+
+.divEjercicio3 {
+  border: black 1px solid;
+  width: 91%;
+  /* text-align: center; */
+  background-color: darkslategray;
+  margin: 0 auto;
+  padding-bottom: 37%;
+}
+/**************FIN EJERCICIO 5.1*************************/
+/**************INICIO EJERCICIO 5.2 validar formulario****/
+/**************FIN EJERCICIO 5.2*************************/
+/**************FIN EJERCICIO 5*************************/
+
+/****************************************************************************/
+/****************************************************************************/
+
+/**************INICIO EJERCICIO 6*************************/
+/**************INICIO EJERCICIO 6.1 Listar varios niveles****/
+#formVideoclub {
+  width: 59%;
+  margin-left: 18%;
+  margin-top: 5%;
+}
+#servVideoClub {
+  margin-left: 3%;
+}
+#btnVideoclub {
+  margin-top: 2%;
+  margin-left: 45%;
+}
+.selectGenVideoclub {
+  width: 45%;
+}
+.divContenedorGeneros {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+#divGenDisco {
+  display: none;
+}
+#divGenJuego {
+  display: none;
+}
+#divGenVideo {
+  display: none;
+}
+
+/**************FIN EJERCICIO 6.1*************************/
+/**************INICIO EJERCICIO 6.2 Botón inaccesible****/
+#contImg {
+  position: relative;
+}
+#img {
+  width: 15%;
+  height: 25%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+/**************FIN EJERCICIO 6.2*************************/
+/**************INICIO EJERCICIO 6.3 Burbujeo de sucesos****/
+#textABubble {
+  text-align: center;
+}
+/**************FIN EJERCICIO 6.3*************************/
+/**************FIN EJERCICIO 6*************************/
+
+/****************************************************************************/
+/****************************************************************************/
+
+/**************INICIO EJERCICIO 7*************************/
+/**************INICIO EJERCICIO 7.1 Abrir Ventanas****/
+.buttonVentanas {
+  width: 85%;
+  margin-top: 2%;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.buttonVentana2 {
+  width: 37.5%;
+  margin-top: 5%;
+  cursor: pointer;
+  border-radius: 10%;
+}
+.ButtonVentBox {
+  text-align: center;
+}
+/**************FIN EJERCICIO 7.1*************************/
+/**************INICIO EJERCICIO 7.2 Emulando marcos ****/
+#textoMarco {
+  margin-bottom: 2%;
+}
+#contenedorIzquierdo {
+  border: 1px solid;
+  width: 45%;
+  float: left;
+  margin-top: 2%;
+}
+#contenedorDerecho {
+  border: 1px solid;
+  width: 45%;
+  float: left;
+  margin-top: 2%;
+}
+.divEscribir {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+/**************FIN EJERCICIO 7.2*************************/
+/**************INICIO EJERCICIO 7.3 Burbujeo de sucesos****/
+
+/**************FIN EJERCICIO 7.3*************************/
+/**************FIN EJERCICIO 7*************************/
+
+/****************************************************************************/
+/****************************************************************************/
+
+/**************INICIO EJERCICIO 8*************************/
+/**************INICIO EJERCICIO 8.1 Botón inaccesible****/
+
+/**************FIN EJERCICIO 8.1*************************/
+/**************INICIO EJERCICIO 8.2 Botón inaccesible****/
+
+/**************FIN EJERCICIO 8.2*************************/
+/**************INICIO EJERCICIO 8.3 Burbujeo de sucesos****/
+
+/**************FIN EJERCICIO 8.3*************************/
+/**************FIN EJERCICIO 8*************************/
+/*************************FOOTER**********************************/
+.divFooter {
+  /*	position:absolute; */
+  left: 0%;
+  right: 2%;
+  bottom: 0%;
+  height: 6%;
+  z-index: 0;
+}
+.pfooter {
+  text-align: right;
+  color: orangered;
+  font-family: "Roboto";
+  padding-right: 3%;
+}

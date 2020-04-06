@@ -1,0 +1,89 @@
+.divForm1 {
+  float: left;
+  width: 28%;
+  margin-left: 23.5%;
+}
+.divForm2 {
+  float: left;
+  width: 28%;
+  margin-right: 17%;
+}
+.h1ValidacionForm {
+  text-align: center;
+}
+#btnFormValidacion {
+  margin-left: 44%;
+  margin-right: 43%;
+  margin-top: 3%;
+}
+#nombreValidacion {
+  margin-left: 22%;
+  margin-right: 2%;
+  margin-top: 4%;
+}
+#Apellido_1_Validacion {
+  margin-left: 18%;
+  margin-right: 6%;
+  margin-top: 4%;
+}
+#EdadValidacion {
+  margin-left: 27.2%;
+  margin-right: 6%;
+  margin-top: 4%;
+}
+#MatriculaValidacion {
+  margin-left: 19.5%;
+  margin-right: 11%;
+  margin-top: 4%;
+}
+#tarjetaValidacion {
+  margin-left: 14%;
+  margin-right: 11%;
+  margin-top: 4%;
+}
+#mesExpiracionValidacion {
+  margin-left: 4%;
+  margin-right: 16%;
+  margin-top: 4%;
+}
+
+#numExpedienteValidacion {
+  margin-left: 6%;
+  margin-right: 16%;
+  margin-top: 4%;
+}
+#Apellido_2_Validacion {
+  margin-left: 17.6%;
+  margin-right: 16%;
+  margin-top: 4%;
+}
+#fechaPermisoValidacion {
+  margin-left: 5.6%;
+  margin-right: 16%;
+  margin-top: 4%;
+}
+#importeValidacion {
+  margin-left: 22.2%;
+  margin-right: 16%;
+  margin-top: 4%;
+}
+#tipoTarjetaValidacion {
+  margin-left: 10.2%;
+  margin-right: 16%;
+  margin-top: 4%;
+  width: 46%;
+}
+#anioExpiracionValidacion {
+  margin-left: 4%;
+  margin-right: 16%;
+  margin-top: 4%;
+}
+
+/* valid e invalid para cambiar de color el fondo del input si no es correcto lo introducido
+input:valid, textarea:valid {
+  background:green;
+}
+input:invalid, textarea:invalid {
+  background:red;
+}
+*/

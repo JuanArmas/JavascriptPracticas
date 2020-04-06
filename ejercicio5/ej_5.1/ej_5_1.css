@@ -1,0 +1,125 @@
+#selectMostrarEditorial {
+  border: 3px inset;
+  width: 80%;
+  margin-left: 20%;
+}
+.h2Editorial {
+  border: 3px inset;
+  width: 47%;
+  margin-left: 35%;
+}
+.cajaInfoEditorial {
+  float: left;
+  width: 45%;
+}
+.cajaButtonsEditorial {
+  float: left;
+  width: 45%;
+}
+.buttonsEditorial {
+  margin-left: 28%;
+}
+
+#anadirDatos {
+  margin-top: 11%;
+  margin-left: 11%;
+  margin-right: 49%;
+  width: 65.7%;
+  border-radius: 9%;
+  border: 1px outset;
+  box-shadow: 2px 3px #888888;
+}
+#visualizarDatos {
+  margin-top: 9%;
+  margin-left: 11%;
+  margin-right: 49%;
+  width: 65.7%;
+  border-radius: 9%;
+  border: 1px outset;
+  box-shadow: 2px 3px #888888;
+}
+#eliminarDatos {
+  margin-top: 9%;
+  margin-left: 11%;
+  margin-right: 49%;
+  width: 65.7%;
+  border-radius: 9%;
+  border: 1px outset;
+  box-shadow: 2px 3px #888888;
+}
+#formEditorial {
+  margin-left: 32%;
+}
+.datPersonalesEditorial {
+  margin-top: 8%;
+}
+
+.datPersonalesEditorial h3 {
+  border: 3px inset;
+  text-align: center;
+}
+.datPersonalesEditorial #apellidos {
+  margin-left: 18.7%;
+}
+.datPersonalesEditorial #nombre {
+  margin-left: 21%;
+}
+.datPersonalesEditorial #hombre {
+  margin-left: 26.1%;
+}
+.datPersonalesEditorial #mujer {
+  margin-left: 36.7%;
+}
+.datPersonalesEditorial #email {
+  margin-left: 4.1%;
+}
+.informacionEditorial h3 {
+  border: 3px inset;
+  text-align: center;
+}
+.informacionEditorial #selectEditorial {
+  margin-left: 2%;
+}
+.informacionEditorial #opcion1,
+#opcion2,
+#opcion3 {
+  margin-left: 37.1%;
+}
+/*
+#
+#
+#
+#
+#
+#
+
+.cajaTextoEditorial{}
+.buttonsEditorial{}
+ */
+/**************************INICIO MODAL******************/
+#modalEditorial {
+  position: fixed;
+  width: 350px;
+  height: 190px;
+  top: 0;
+  left: 0;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  border-radius: 9%;
+  border: 3px outset;
+  box-shadow: 3px 5px #888888;
+  background-color: #fafafa;
+  color: #000000;
+  display: none;
+}
+#pModalEditorial {
+  margin-left: 10%;
+  margin-top: 7%;
+}
+#cerrarModal {
+  margin-top: inherit;
+  margin-left: 75%;
+  border-radius: 9%;
+}
+/**************************FIN MODAL******************/

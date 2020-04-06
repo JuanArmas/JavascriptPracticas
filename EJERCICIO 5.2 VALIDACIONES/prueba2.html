@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+  <head>
+    <title>Pagina Prueba</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="prueba2.css" />
+  </head>
+  <body>
+    <div class="divEjercicio2">
+      <!-- INICIO CODIGO COMUN -->
+      <h1 class="h1ValidacionForm">Validaciones de un Formulario</h1>
+      <form action="">
+        <div class="divForm1">
+          <label for="nombreValidacion">Nombre:</label>
+          <input
+            type="text"
+            name="comprobar"
+            id="nombreValidacion"
+            onclick="elementWhite(document.getElementById('nombreValidacion'))"
+            required
+          />
+          <label for="Apellido_1_Validacion">Apellido 1:</label>
+          <input
+            type="text"
+            name="comprobar"
+            id="Apellido_1_Validacion"
+            onclick="elementWhite(document.getElementById('Apellido_1_Validacion'))"
+            required
+          />
+          <label for="EdadValidacion">Edad:</label>
+          <input
+            type="text"
+            name="EdadValidacion"
+            id="EdadValidacion"
+            placeholder="18-120"
+            onclick="elementWhite(document.getElementById('EdadValidacion'))"
+          />
+          <label for="MatriculaValidacion">Matricula:</label>
+          <input
+            type="text"
+            name="MatriculaValidacion"
+            id="MatriculaValidacion"
+            placeholder="0000-BBB"
+            onclick="elementWhite(document.getElementById('MatriculaValidacion'))"
+          />
+          <label for="tarjetaValidacion">Nº de Tarjeta:</label>
+          <input
+            type="text"
+            name="tarjetaValidacion"
+            id="tarjetaValidacion"
+            onclick="elementWhite(document.getElementById('tarjetaValidacion'))"
+          />
+          <label for="mesExpiracionValidacion">Mes de Expiración:</label>
+          <input
+            type="text"
+            name="mesExpiracionValidacion"
+            id="mesExpiracionValidacion"
+            placeholder="1 a 12"
+            onclick="elementWhite(document.getElementById('mesExpiracionValidacion'))"
+          />
+        </div>
+        <div class="divForm2">
+          <label for="numExpedienteValidacion">Nº de Expediente:</label>
+          <input
+            type="text"
+            name="numExpedienteValidacion"
+            id="numExpedienteValidacion"
+            placeholder="340000000000-349999999999"
+            onclick="elementWhite(document.getElementById('numExpedienteValidacion'))"
+          />
+          <label for="Apellido_2_Validacion">Apellido 2:</label>
+          <input
+            type="text"
+            name="comprobar"
+            id="Apellido_2_Validacion"
+            onclick="elementWhite(document.getElementById('Apellido_2_Validacion'))"
+            required
+          />
+          <label for="fechaPermisoValidacion">Fecha de Permiso:</label>
+          <input
+            type="text"
+            name="fechaPermisoValidacion"
+            id="fechaPermisoValidacion"
+            placeholder="DD-MM-AAAA"
+            onclick="elementWhite(document.getElementById('fechaPermisoValidacion'))"
+          />
+          <label for="importeValidacion">Importe:</label>
+          <input
+            type="text"
+            name="importeValidacion"
+            id="importeValidacion"
+            onclick="elementWhite(document.getElementById('importeValidacion'))"
+          />
+          <label for="tipoTarjetaValidacion">Tipo de Tarjeta:</label>
+          <select
+            name="tipoTarjetaValidacion"
+            id="tipoTarjetaValidacion"
+            required
+          >
+            <option value="generica">Genérica</option>
+            <option value="aExpress">American Express</option>
+            <option value="dClub">Dinner´s Club</option>
+            <option value="mCard">Master Card</option>
+            <option value="visa">Visa</option>
+          </select>
+          <label for="anioExpiracionValidacion">Año de Expiración:</label>
+          <input
+            type="text"
+            name="anioExpiracionValidacion"
+            id="anioExpiracionValidacion"
+            placeholder="2001 a 2100"
+            onclick="elementWhite(document.getElementById('anioExpiracionValidacion'))"
+          />
+        </div>
+      </form>
+      <button id="btnFormValidacion" onclick="ejecutarValidaciones()">
+        Valida Formulario
+      </button>
+      <!-- FIN CODIGO COMUN -->
+    </div>
+    <script src="prueba2.js" type="text/javascript"></script>
+  </body>
+</html>
